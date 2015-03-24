@@ -14,7 +14,7 @@ void setup() {
   delay(3000);
   digitalWrite(LED_PIN, LOW);
 
-//  stepper.start(5000, 3, millis());
+  stepper.start(5000, 3, millis());
 }
 
 void loop() {

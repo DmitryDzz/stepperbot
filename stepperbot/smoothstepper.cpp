@@ -62,17 +62,15 @@ void SmoothStepper::update(long millis) {
     return;
   }
   
-  if (this->direction > 0) {
-    this->updateMotor(this->currentSubstep % (4 * this->stepperMode));
-  } else {
-    this->updateMotor((this->currentSubstep - this->substeps) % (4 * this->stepperMode));
-  }
-  
   this->currentSubstep += this->direction;
+  this->updateMotor(this->currentSubstep % (4 * this->stepperMode));
 }
 
 void SmoothStepper::updateMotor(long phase) {
-  Serial.println(phase);
+  if (phase < 0) {
+    phase += 4 * this->stepperMode;
+  }
+//  Serial.println("Phase=" + String(phase));
   
   switch (this->stepperMode) {
     case FULL_STEP:
