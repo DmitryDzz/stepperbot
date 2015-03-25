@@ -11,10 +11,10 @@ class SmoothStepper {
   public:
     SmoothStepper(int motorFullStepsNumber, StepperMode stepperMode, int motorPinA1, int motorPinA2, int motorPinB1, int motorPinB2);
 
-    void zero();
-    void start(long period, long substeps, long millis);
+    void zero(long substepDelay);
+    void start(long period, long substeps, long timestamp);
     void stop();
-    void update(long millis);
+    void update(long timestamp);
 
   private:
     bool started;
@@ -23,9 +23,10 @@ class SmoothStepper {
 
     signed short direction;
     long substepDelay;
-    long lastSubstepTime;
+    long lastTimestamp;
     long substeps;
     long currentSubstep;
+    long currentPhase;
     
     // motor pin numbers:
     int motorPinA1;
