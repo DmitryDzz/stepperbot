@@ -1,0 +1,10 @@
+convert \
+-delay 200 00.png -delay 90 01.png -delay 50 02.png \
+-delay 200 03.png -delay 90 04.png -delay 50 05.png \
+-delay 200 06.png -delay 90 07.png -delay 50 08.png \
+-delay 200 09.png -delay 90 10.png -delay 50 11.png \
+-delay 200 12.png -delay 90 13.png -delay 50 14.png \
+-delay 200 15.png -delay 90 16.png -delay 50 17.png \
+-delay 200 18.png -delay 90 19.png -delay 50 20.png \
+-delay 200 21.png -delay 90 22.png -delay 50 23.png \
+-loop 0 half-step.gif
