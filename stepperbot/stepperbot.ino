@@ -32,7 +32,7 @@ void loop() {
   stepper.update(timestamp);
 
   if (timestamp - lastTimestamp >= period) {
-    stepper.start(1000, 60 * STEPPER_MODE * clockwise, timestamp); // 3 revolutions
+    stepper.start(100, 60 * STEPPER_MODE * clockwise, timestamp); // 3 revolutions
     clockwise *= -1;
     lastTimestamp = timestamp;
   }
